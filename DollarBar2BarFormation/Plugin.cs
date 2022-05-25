@@ -206,7 +206,7 @@ namespace DollarBar2BarFormation
             //if (isBarClose)
             //{
             //    _current_Index_Bar++;
-            //    if(_current_Index_Bar >= _quantity)
+            //    if (_current_Index_Bar >= _quantity)
             //    {
             //        Bar.CloseBar();
             //        _current_Index_Bar = 0;
@@ -216,20 +216,18 @@ namespace DollarBar2BarFormation
 
 
 
-			if (isBarClose)
+            if (isBarClose)
 			{
 			
-				if (_quantity >= this._barSize)
+				if (m_Volume >= this._barSize)
 				{
 					//Bar.CloseBar();
 					m_Volume = 0;
 					m_UpVolume = 0;
 					m_DownVolume = 0;
-
 					Bar.CloseBar();
 					_current_Index_Bar = 0;
 					m_OHLC.Clear();
-
 				}
 
 			}
