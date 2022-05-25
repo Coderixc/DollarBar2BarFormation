@@ -1,0 +1,26 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8D79A182-88B6-487F-AEAA-1D8597364BC1}") = "DollarBar2BarFormation", "DollarBar2BarFormation\DollarBar2BarFormation.csproj", "{61E19192-F66D-4368-8290-C1E744FA1A00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61E19192-F66D-4368-8290-C1E744FA1A00}.Debug|x64.ActiveCfg = Debug|x64
+		{61E19192-F66D-4368-8290-C1E744FA1A00}.Debug|x64.Build.0 = Debug|x64
+		{61E19192-F66D-4368-8290-C1E744FA1A00}.Debug|x86.ActiveCfg = Debug|x86
+		{61E19192-F66D-4368-8290-C1E744FA1A00}.Debug|x86.Build.0 = Debug|x86
+		{61E19192-F66D-4368-8290-C1E744FA1A00}.Release|x64.ActiveCfg = Release|x64
+		{61E19192-F66D-4368-8290-C1E744FA1A00}.Release|x64.Build.0 = Release|x64
+		{61E19192-F66D-4368-8290-C1E744FA1A00}.Release|x86.ActiveCfg = Release|x86
+		{61E19192-F66D-4368-8290-C1E744FA1A00}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
