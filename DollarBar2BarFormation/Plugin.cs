@@ -203,17 +203,38 @@ namespace DollarBar2BarFormation
 
 			m_OHLC.Update(open, high, low, close, volumeAdded, upVolumeAdded, downVolumeAdded, time_in_ticks, tickId);
             Bar.UpdateBar(m_OHLC.Time_in_ticks, m_OHLC.TickId, m_OHLC.Open, m_OHLC.High, m_OHLC.Low, m_OHLC.Close, m_OHLC.BarVolume, m_OHLC.BarUpVolume, m_OHLC.BarDownVolume, m_OHLC.Trend, true, true);
-            if (isBarClose)
-            {
-                _current_Index_Bar++;
-                if(_current_Index_Bar >= _quantity)
-                {
-                    Bar.CloseBar();
-                    _current_Index_Bar = 0;
-                    m_OHLC.Clear();
-                }
-            }
-        }
+            //if (isBarClose)
+            //{
+            //    _current_Index_Bar++;
+            //    if(_current_Index_Bar >= _quantity)
+            //    {
+            //        Bar.CloseBar();
+            //        _current_Index_Bar = 0;
+            //        m_OHLC.Clear();
+            //    }
+            //}
+
+
+
+			if (isBarClose)
+			{
+			
+				if (_quantity >= this._barSize)
+				{
+					//Bar.CloseBar();
+					m_Volume = 0;
+					m_UpVolume = 0;
+					m_DownVolume = 0;
+
+					Bar.CloseBar();
+					_current_Index_Bar = 0;
+					m_OHLC.Clear();
+
+				}
+
+			}
+
+		}
 
 		public void Reset()
 		{
