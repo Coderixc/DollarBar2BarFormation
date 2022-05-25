@@ -101,16 +101,15 @@ namespace DollarBar2BarFormation
         private int _current_Index_Bar = 0;
         private OHLC m_OHLC = new OHLC();
 
-		#region Properties
+	
 		private long m_Volume = 0;
 		private long m_UpVolume = 0;
 		private long m_DownVolume = 0;
 		private double m_PointValue = 0.0001;
 		private long m_MinMovement = 1;
-		#endregion
-
 
 		#endregion
+
 
 		public void Init(IBaseOptions baseOptions, IParams customParams)
 		{
@@ -196,7 +195,7 @@ namespace DollarBar2BarFormation
 			m_DownVolume += downVolumeAdded;
 
 			//Bar.UpdateBar(time_in_ticks, tickId, open, high, low, close, m_Volume, m_UpVolume, m_DownVolume, trend, true, false);
-			Bar.UpdateBar(time_in_ticks, tickId, open, high, low, close, m_Volume, m_UpVolume, m_DownVolume, trend, true, false);
+			//Bar.UpdateBar(time_in_ticks, tickId, open, high, low, close, m_Volume, m_UpVolume, m_DownVolume, trend, true, false);
 
 
 
@@ -220,6 +219,9 @@ namespace DollarBar2BarFormation
 		{
             _current_Index_Bar = 0;
             m_OHLC.Clear();
+
+			this.QueueVolume_sum.Clear();
+			this.QueuePrice_mean.Clear();
 		}
 		#endregion
 

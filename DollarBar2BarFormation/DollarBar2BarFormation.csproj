@@ -59,6 +59,10 @@
     <Reference Include="CustomResolutionsTypes">
       <HintPath>C:\Program Files\TS Support\MultiCharts64\CustomResolutionsTypes.dll</HintPath>
     </Reference>
+    <Reference Include="DollarBar2BarFormation, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\DollarBar2BarFormation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
