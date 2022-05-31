@@ -178,9 +178,7 @@ namespace DollarBar2BarFormation
 				// Remove first elements
 				this.QueuePrice_mean.Dequeue();
 				this.QueueVolume_sum.Dequeue();
-
 				this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, 30) / 50;
-
 				this._barSize = _barSizeVar;
 			}
 			else
@@ -199,7 +197,6 @@ namespace DollarBar2BarFormation
 			{
 				if (m_Volume >= this._barSize)
 				{
-					//Bar.CloseBar();
 					m_Volume = 0;
 					m_UpVolume = 0;
 					m_DownVolume = 0;
