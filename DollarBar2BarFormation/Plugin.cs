@@ -174,7 +174,6 @@ namespace DollarBar2BarFormation
 			if (Threshold >= 30)
 			{
 				this.list_barsizevar = this.LibIndicator.Multiply(this.QueuePrice_mean.ToList(), this.QueueVolume_sum.ToList());
-
 				// Remove first elements
 				this.QueuePrice_mean.Dequeue();
 				this.QueueVolume_sum.Dequeue();
