@@ -151,7 +151,6 @@ namespace DollarBar2BarFormation
 			#region Resampling data for a Day in Multicharts
 			if (this.PreviousDate != this.ProcessDate)
 			{
-
 				//Creating List1 which holds the closing prices.mean()
 				double res = this.resample_WithMean(this.ListPrice_minutes);
 				//this.ListPrice_mean.Add(res);
