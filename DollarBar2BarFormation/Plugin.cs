@@ -137,8 +137,6 @@ namespace DollarBar2BarFormation
 			//635726881200000000---> 20150717000200
 			//635726881800000000---> 20150717000300
 
-
-
 			string dt = DateTimeString(time_in_ticks);
 			if (this.Flag_SingleUse)
 			{
