@@ -114,7 +114,6 @@ namespace DollarBar2BarFormation
 		public void Init(IBaseOptions baseOptions, IParams customParams)
 		{
 			object obj = null;
-
 			customParams.GetValue((int)EFields.QuantityField, out obj);
 			if (obj != null)
 			{
