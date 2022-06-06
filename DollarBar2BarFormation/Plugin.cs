@@ -126,7 +126,6 @@ namespace DollarBar2BarFormation
 
 		public void OnData(ICustomBar Bar, Int64 time_in_ticks, Int32 tickId, double open, double high, double low, double close, long volumeAdded, long upVolumeAdded, long downVolumeAdded, ECustomBarTrendType trend, bool isBarClose)
 		{
-
 			this.ListPrice_minutes.Add(close);
 			this.ListVolume_minutes.Add(volumeAdded);
 
