@@ -102,6 +102,11 @@ namespace DollarBar2BarFormation
         private OHLC m_OHLC = new OHLC();
 
 	
+
+
+
+
+
 		private long m_Volume = 0;
 		private long m_UpVolume = 0;
 		private long m_DownVolume = 0;
