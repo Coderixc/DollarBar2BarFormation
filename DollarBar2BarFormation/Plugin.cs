@@ -147,6 +147,9 @@ namespace DollarBar2BarFormation
 				this.Flag_SingleUse = false;
 			}
 
+
+
+
 			this.ProcessDate = Convert.ToInt32(dt.Substring(0, 8));
 
 			#region Resampling data for a Day in Multicharts
