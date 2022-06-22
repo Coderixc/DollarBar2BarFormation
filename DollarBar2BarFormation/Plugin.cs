@@ -790,12 +790,11 @@ namespace DollarBar2BarFormation
 		private System.Windows.Forms.Label LabelBarsizeFix;
 		private System.Windows.Forms.TextBox BarsizeFix;
 	}
-    #endregion
+# endregion
+	#endregion
 
-    #endregion
-
-    #region Helper
-    class OHLC
+	#region Helper
+	class OHLC
     {
         public double Open { get; private set; }
         public double High { get; private set; }
@@ -877,7 +876,10 @@ namespace DollarBar2BarFormation
 
     public enum EFields
 	{
-		QuantityField = 0
+		QuantityField = 0,
+		ThresholdDays = 30,
+		BarSizeFix = 50000
+
 	}
 
 	static class DefaultSettings
