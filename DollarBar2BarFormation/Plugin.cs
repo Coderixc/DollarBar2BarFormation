@@ -618,7 +618,10 @@ namespace DollarBar2BarFormation
 		{
             this.LabelQuantity = new System.Windows.Forms.Label();
             this.EditQuantity = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+
+			this.NumberOfdays = new System.Windows.Forms.TextBox();
+
+			this.SuspendLayout();
             // 
             // LabelQuantity
             // 
@@ -659,6 +662,7 @@ namespace DollarBar2BarFormation
 
 		private System.Windows.Forms.Label LabelQuantity;
         private System.Windows.Forms.TextBox EditQuantity;
+		private System.Windows.Forms.TextBox NumberOfdays;
 	}
     #endregion
 
