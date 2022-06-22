@@ -655,7 +655,7 @@ namespace DollarBar2BarFormation
 			// LabelQuantity
 			// 
 			this.LabelThreshold.AutoSize = true;
-			this.LabelThreshold.Location = new System.Drawing.Point(36, 10);
+			this.LabelThreshold.Location = new System.Drawing.Point(36, 50);
 			this.LabelThreshold.Name = "LabelThresholdDays";
 			this.LabelThreshold.Size = new System.Drawing.Size(51, 13);
 			this.LabelThreshold.TabIndex = 8;
