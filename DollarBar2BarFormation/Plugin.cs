@@ -619,7 +619,7 @@ namespace DollarBar2BarFormation
             this.LabelQuantity = new System.Windows.Forms.Label();
             this.EditQuantity = new System.Windows.Forms.TextBox();
 
-			this.NumberOfdays = new System.Windows.Forms.TextBox();
+			this.LabelThreshold = new System.Windows.Forms.Label();
 
 			this.SuspendLayout();
             // 
@@ -641,10 +641,32 @@ namespace DollarBar2BarFormation
             this.EditQuantity.Size = new System.Drawing.Size(60, 21);
             this.EditQuantity.TabIndex = 1;
             this.EditQuantity.TextChanged += new System.EventHandler(this.QuantityEdit_TextChanged);
-            // 
-            // PluginSettingsPanel
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+
+
+
+			////
+			/////////
+			/////
+			///
+			// 
+			// LabelQuantity
+			// 
+			this.LabelThreshold.AutoSize = true;
+			this.LabelThreshold.Location = new System.Drawing.Point(36, 5);
+			this.LabelThreshold.Name = "LabelThresholdDays";
+			this.LabelThreshold.Size = new System.Drawing.Size(51, 13);
+			this.LabelThreshold.TabIndex = 7;
+			this.LabelThreshold.Text = "ThresholdDays:";
+			this.LabelThreshold.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+
+
+
+
+
+			// 
+			// PluginSettingsPanel
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(380, 102);
@@ -662,7 +684,9 @@ namespace DollarBar2BarFormation
 
 		private System.Windows.Forms.Label LabelQuantity;
         private System.Windows.Forms.TextBox EditQuantity;
-		private System.Windows.Forms.TextBox NumberOfdays;
+
+		private System.Windows.Forms.Label LabelThreshold;
+		private System.Windows.Forms.TextBox ThresholdDays;
 	}
     #endregion
 
