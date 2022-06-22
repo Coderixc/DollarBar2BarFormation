@@ -594,6 +594,7 @@ namespace DollarBar2BarFormation
             {
 				double barsize = Convert.ToDouble(BarsizeFix.Text.ToString());
 
+
 			}
 			catch (Exception ex)
             {
