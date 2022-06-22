@@ -584,11 +584,34 @@ namespace DollarBar2BarFormation
             return isValid;
         }
 
-    }
-	#endregion
+        //validate Input from text box
 
-	#region Designer
-	partial class PluginSettingsPanel
+
+        #region Authenticate and Validate Settings
+		private void Validate_BarSizeFix(object sender, EventArgs e)
+        {
+			try
+            {
+				double barsize = Convert.ToDouble(BarsizeFix.Text.ToString());
+
+			}
+			catch (Exception ex)
+            {
+
+            }
+
+
+        }
+
+
+
+        #region
+
+    }
+    #endregion
+
+    #region Designer
+    partial class PluginSettingsPanel
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -698,7 +721,8 @@ namespace DollarBar2BarFormation
 			this.BarsizeFix.Name = "EditBarSizeFix";
 			this.BarsizeFix.Size = new System.Drawing.Size(60, 21);
 			this.BarsizeFix.TabIndex = 2;
-			//this.ThresholdDays.TextChanged += new System.EventHandler(this.QuantityEdit_TextChanged);
+			this.BarsizeFix.Text = "50000";
+			this.BarsizeFix.TextChanged += new EventHandler(this.Validate_BarSizeFix);
 
 
 
