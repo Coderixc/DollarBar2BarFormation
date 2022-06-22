@@ -693,9 +693,9 @@ namespace DollarBar2BarFormation
 			// 
 			// EditQuantity
 			// 
-			this.BarsizeFix.Location = new System.Drawing.Point(137, 50);
+			this.BarsizeFix.Location = new System.Drawing.Point(117, 70);
 			this.BarsizeFix.AutoSize = false;
-			this.BarsizeFix.Name = "EditThresholdDays";
+			this.BarsizeFix.Name = "EditBarSizeFix";
 			this.BarsizeFix.Size = new System.Drawing.Size(60, 21);
 			this.BarsizeFix.TabIndex = 2;
 			//this.ThresholdDays.TextChanged += new System.EventHandler(this.QuantityEdit_TextChanged);
