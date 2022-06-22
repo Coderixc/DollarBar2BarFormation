@@ -667,7 +667,7 @@ namespace DollarBar2BarFormation
 			// 
 			// EditQuantity
 			// 
-			this.ThresholdDays.Location = new System.Drawing.Point(117, 10);
+			this.ThresholdDays.Location = new System.Drawing.Point(117, 50);
 			this.ThresholdDays.AutoSize = false;
 			this.ThresholdDays.Name = "EditThresholdDays";
 			this.ThresholdDays.Size = new System.Drawing.Size(60, 21);
