@@ -593,22 +593,45 @@ namespace DollarBar2BarFormation
 			try
             {
 				double barsize = Convert.ToDouble(BarsizeFix.Text.ToString());
-
-
+				TextBox tb = (TextBox)sender;
+				BarsizeFix.Text  = tb.Text.ToString();  //Update 
 			}
 			catch (Exception ex)
             {
+				m_mcErrorProvider.SetError(BarsizeFix, "Please contact developer" );
+			}
+        }
+        #endregion
 
-            }
 
+        #region Authenticate and Validate Threshold Days
+		private void Validate_ThresholdDays(object sender,EventArgs e)
+        {
+			try
+            {
+				int thresholdays = Convert.ToInt32(ThresholdDays.Text.ToString());
+				if(thresholdays < 0 )
+                {
+					m_mcErrorProvider.SetError(ThresholdDays, "Please use valid Thresholddate ");
 
+				}
+				else
+                {
+					TextBox tb = (TextBox)sender;
+					ThresholdDays.Text = tb.Text.ToString();
+				}
+
+			}
+			catch
+            {
+				m_mcErrorProvider.SetError(ThresholdDays, "Please contact Developer");
+			}
         }
 
+		#endregion
 
 
-        #region
-
-    }
+	}
     #endregion
 
     #region Designer
@@ -697,7 +720,8 @@ namespace DollarBar2BarFormation
 			this.ThresholdDays.Name = "EditThresholdDays";
 			this.ThresholdDays.Size = new System.Drawing.Size(60, 21);
 			this.ThresholdDays.TabIndex = 2;
-			//this.ThresholdDays.TextChanged += new System.EventHandler(this.QuantityEdit_TextChanged);
+			this.ThresholdDays.Text = "30"; //Default
+			this.ThresholdDays.TextChanged += new System.EventHandler(this.Validate_ThresholdDays);
 
 
 
