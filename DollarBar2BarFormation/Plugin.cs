@@ -620,9 +620,10 @@ namespace DollarBar2BarFormation
             this.EditQuantity = new System.Windows.Forms.TextBox();
 
 			this.LabelThreshold = new System.Windows.Forms.Label();
-
-
 			this.ThresholdDays = new System.Windows.Forms.TextBox();
+
+			this.LabelBarsizeFix = new System.Windows.Forms.Label();
+			this.BarsizeFix = new System.Windows.Forms.TextBox();
 
 			this.SuspendLayout();
             // 
@@ -675,19 +676,50 @@ namespace DollarBar2BarFormation
 			//this.ThresholdDays.TextChanged += new System.EventHandler(this.QuantityEdit_TextChanged);
 
 
+
+			// 
+			// LabelQuantity
+			// 
+			this.LabelBarsizeFix.AutoSize = true;
+			this.LabelBarsizeFix.Location = new System.Drawing.Point(16, 70);
+			this.LabelBarsizeFix.Name = "LabelBarSizeFix";
+			this.LabelBarsizeFix.Size = new System.Drawing.Size(51, 13);
+			this.LabelBarsizeFix.TabIndex = 8;
+			this.LabelBarsizeFix.Text = "BarSizeFix:";
+			this.LabelBarsizeFix.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+
+
+			// 
+			// EditQuantity
+			// 
+			this.BarsizeFix.Location = new System.Drawing.Point(137, 50);
+			this.BarsizeFix.AutoSize = false;
+			this.BarsizeFix.Name = "EditThresholdDays";
+			this.BarsizeFix.Size = new System.Drawing.Size(60, 21);
+			this.BarsizeFix.TabIndex = 2;
+			//this.ThresholdDays.TextChanged += new System.EventHandler(this.QuantityEdit_TextChanged);
+
+
+
+
+
 			// 
 			// PluginSettingsPanel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(380, 102);
+			this.ClientSize = new System.Drawing.Size(380, 102);
+
             this.Controls.Add(this.EditQuantity);
             this.Controls.Add(this.LabelQuantity);
 
 			this.Controls.Add(this.LabelThreshold);
-
 			this.Controls.Add(this.ThresholdDays);
+
+			this.Controls.Add(this.LabelBarsizeFix);
+			this.Controls.Add(this.BarsizeFix);
 
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PluginSettingsPanel";
@@ -704,6 +736,10 @@ namespace DollarBar2BarFormation
 
 		private System.Windows.Forms.Label LabelThreshold;
 		private System.Windows.Forms.TextBox ThresholdDays;
+
+
+		private System.Windows.Forms.Label LabelBarsizeFix;
+		private System.Windows.Forms.TextBox BarsizeFix;
 	}
     #endregion
 
