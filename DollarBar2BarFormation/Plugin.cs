@@ -672,7 +672,10 @@ namespace DollarBar2BarFormation
             this.ClientSize = new System.Drawing.Size(380, 102);
             this.Controls.Add(this.EditQuantity);
             this.Controls.Add(this.LabelQuantity);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+			this.Controls.Add(this.LabelThreshold);
+
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PluginSettingsPanel";
             this.Text = "PluginSettingsPanel";
             this.ResumeLayout(false);
