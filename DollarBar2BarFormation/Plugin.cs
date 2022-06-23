@@ -233,7 +233,6 @@ namespace DollarBar2BarFormation
 			customParams.GetValue((int)EFields.QuantityField, out quantity);
 
 			string quantityText = quantity != null ? quantity.ToString() : DefaultSettings.Quantity.ToString();
-
 			formattedParams = string.Format("{0} {1}", Name, quantityText);
         }
 		#endregion
