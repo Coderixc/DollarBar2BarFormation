@@ -785,11 +785,11 @@ namespace DollarBar2BarFormation
 		private System.Windows.Forms.Label LabelThreshold;
 		private System.Windows.Forms.TextBox ThresholdDays;
 
-
 		private System.Windows.Forms.Label LabelBarsizeFix;
 		private System.Windows.Forms.TextBox BarsizeFix;
 	}
-# endregion
+
+#endregion
 	#endregion
 
 	#region Helper
