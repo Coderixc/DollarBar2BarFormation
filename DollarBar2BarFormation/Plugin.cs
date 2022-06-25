@@ -97,7 +97,6 @@ namespace DollarBar2BarFormation
 				return "8eae21d0-9ce6-4d2b-8df5-0f4a939d907f";
 			}
 		}
-
 		public String Description
 		{
 			get
@@ -105,7 +104,6 @@ namespace DollarBar2BarFormation
 				return "Using Bar formation Pluggin";
 			}
 		}
-
 		public String Vendor
 		{
 			get
@@ -118,12 +116,6 @@ namespace DollarBar2BarFormation
 		private int _quantity = DefaultSettings.Quantity;
         private int _current_Index_Bar = 0;
         private OHLC m_OHLC = new OHLC();
-
-	
-
-
-
-
 
 		private long m_Volume = 0;
 		private long m_UpVolume = 0;
@@ -152,9 +144,6 @@ namespace DollarBar2BarFormation
 			this.ListPrice_minutes.Add(close);
 			this.ListVolume_minutes.Add(volumeAdded);
 		
-
-
-
 			//*** Have you checked the format of time_in_ticks ?
 			//635726880600000000-- > 20150717000100
 			//635726880600000000-- > 20150717000100
@@ -167,8 +156,6 @@ namespace DollarBar2BarFormation
 				this.PreviousDate = Convert.ToInt32(dt.Substring(0, 8));
 				this.Flag_SingleUse = false;
 			}
-
-
 
 
 			this.ProcessDate = Convert.ToInt32(dt.Substring(0, 8));
