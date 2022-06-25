@@ -69,10 +69,12 @@ namespace DollarBar2BarFormation
 			if(m_panel != null)
             {
 				this.barSizeFix = m_panel.barsizefix;
+				this.mthresholddays = m_panel.thresholdDay;
 			}
 			else
             {
-				this.barSizeFix = DefaultSettings._barsizefix; 
+				this.barSizeFix = DefaultSettings._barsizefix;
+				this.mthresholddays = DefaultSettings._threshold_Day;
 			}
 
 
