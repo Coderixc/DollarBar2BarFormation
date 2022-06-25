@@ -250,6 +250,9 @@ namespace DollarBar2BarFormation
 			object quantity = null;
 			customParams.GetValue((int)EFields.QuantityField, out quantity);
 
+			object thresholday = null;
+			customParams.GetValue((int)EFields.ThresholdDay, out thresholday);
+
 			string quantityText = quantity != null ? quantity.ToString() : DefaultSettings.Quantity.ToString();
 			formattedParams = string.Format("{0} {1}", Name, quantityText);
         }
@@ -908,7 +911,8 @@ namespace DollarBar2BarFormation
 
     public enum EFields
 	{
-		QuantityField = 0
+		QuantityField = 0,
+		ThresholdDay =30
 		
 
 	}
