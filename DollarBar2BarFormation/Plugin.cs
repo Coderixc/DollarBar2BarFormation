@@ -195,7 +195,7 @@ namespace DollarBar2BarFormation
 			#endregion
 
 			int Threshold = Math.Max(this.QueuePrice_mean.Count, this.QueueVolume_sum.Count);
-			if (Threshold >= 30)
+			if (Threshold >= this.mthresholddays) //30)
 			{
 				this.list_barsizevar = this.LibIndicator.Multiply(this.QueuePrice_mean.ToList(), this.QueueVolume_sum.ToList());
 				// Remove first elements
