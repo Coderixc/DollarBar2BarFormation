@@ -500,6 +500,9 @@ namespace DollarBar2BarFormation
 		private IParams m_params = null;
 		mcErrorProvider m_mcErrorProvider;
 
+		public int thresholdDay = 0;
+		public int barsizefix = 30000;
+
 		public PluginSettingsPanel(IParams _params)
 		{
 			InitializeComponent();
@@ -518,6 +521,10 @@ namespace DollarBar2BarFormation
 				if (val != null)
 				{
 					EditQuantity.Text = val.ToString();
+
+					thresholdDay = Convert.ToInt32(ThresholdDays.Text.ToString());
+					barsizefix = Convert.ToInt32(BarsizeFix.Text.ToString());
+
 				}
 				else
 				{
@@ -888,6 +895,9 @@ namespace DollarBar2BarFormation
 	static class DefaultSettings
 	{
 		static public int Quantity { get { return 1; } }
+
+		static public int  _barsizefix { get { return 50000; } }  //acessor properties
+		static public int _threshold_Day { get { return 30; } }  //acessor properties
 	}
 
 	#endregion
