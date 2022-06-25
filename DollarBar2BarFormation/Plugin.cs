@@ -247,6 +247,8 @@ namespace DollarBar2BarFormation
         {
             formattedParams = Name;
 
+			this.barSizeFix = m_panel.barsizefix;
+
 			object quantity = null;
 			customParams.GetValue((int)EFields.QuantityField, out quantity);
 
