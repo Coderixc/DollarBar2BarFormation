@@ -65,6 +65,16 @@ namespace DollarBar2BarFormation
 			this.barSizeFix = 50000;//5000000000;  //TODO : Load Default bar size while Loading Format Instruments..
 			//this.barSizeFix = m_panel.;
 
+			if(m_panel != null)
+            {
+				this.barSizeFix = m_panel.barsizefix;
+			}
+			else
+            {
+				this.barSizeFix = DefaultSettings._barsizefix; 
+			}
+
+
 		}
 		#endregion
 
