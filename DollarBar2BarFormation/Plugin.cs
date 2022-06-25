@@ -500,8 +500,8 @@ namespace DollarBar2BarFormation
 		private IParams m_params = null;
 		mcErrorProvider m_mcErrorProvider;
 
-		public int thresholdDay = 0;
-		public int barsizefix = 30000;
+		public int thresholdDay;
+		public int barsizefix;
 
 		public PluginSettingsPanel(IParams _params)
 		{
@@ -529,7 +529,11 @@ namespace DollarBar2BarFormation
 				else
 				{
                     EditQuantity.Text = DefaultSettings.Quantity.ToString();
-                }
+
+					thresholdDay = DefaultSettings._threshold_Day;
+
+					barsizefix = DefaultSettings._barsizefix;
+				}
 
 				m_params = _params;
 			}
@@ -731,7 +735,7 @@ namespace DollarBar2BarFormation
 			this.ThresholdDays.Name = "EditThresholdDays";
 			this.ThresholdDays.Size = new System.Drawing.Size(60, 21);
 			this.ThresholdDays.TabIndex = 2;
-			this.ThresholdDays.Text = "30"; //Default
+			this.ThresholdDays.Text = DefaultSettings._threshold_Day.ToString(); //Default
 			this.ThresholdDays.TextChanged += new System.EventHandler(this.Validate_ThresholdDays);
 
 
@@ -757,7 +761,7 @@ namespace DollarBar2BarFormation
 			this.BarsizeFix.Name = "EditBarSizeFix";
 			this.BarsizeFix.Size = new System.Drawing.Size(60, 21);
 			this.BarsizeFix.TabIndex = 2;
-			this.BarsizeFix.Text = "50000";
+			this.BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
 			this.BarsizeFix.TextChanged += new EventHandler(this.Validate_BarSizeFix);
 
 
