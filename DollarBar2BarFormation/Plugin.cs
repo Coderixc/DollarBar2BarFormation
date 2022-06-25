@@ -41,8 +41,8 @@ namespace DollarBar2BarFormation
 
 
 		private double _barSize = 0;
-		private double _barSizeVar = 0;
-		private double mthresholddays = 0;
+		private double _barSizeVar = DefaultSettings._barsizefix;
+		private double mthresholddays = DefaultSettings._threshold_Day;
 
 		private int PreviousDate = 0; //Past
 		private int ProcessDate = 0; //Presnt
@@ -66,16 +66,16 @@ namespace DollarBar2BarFormation
 			//this.barSizeFix = 50000;//5000000000;  //TODO : Load Default bar size while Loading Format Instruments..
 			//this.barSizeFix = m_panel.;
 
-			if(m_panel != null)
-            {
-				this.barSizeFix = m_panel.barsizefix;
-				this.mthresholddays = m_panel.thresholdDay;
-			}
-			else
-            {
-				this.barSizeFix = DefaultSettings._barsizefix;
-				this.mthresholddays = DefaultSettings._threshold_Day;
-			}
+			//if(m_panel != null)
+   //         {
+			//	this.barSizeFix = m_panel.barsizefix;
+			//	this.mthresholddays = m_panel.thresholdDay;
+			//}
+			//else
+   //         {
+			//	this.barSizeFix = DefaultSettings._barsizefix;
+			//	this.mthresholddays = DefaultSettings._threshold_Day;
+			//}
 
 
 		}
