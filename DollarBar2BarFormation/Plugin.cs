@@ -42,6 +42,7 @@ namespace DollarBar2BarFormation
 
 		private double _barSize = 0;
 		private double _barSizeVar = 0;
+		private double mthresholddays = 0;
 
 		private int PreviousDate = 0; //Past
 		private int ProcessDate = 0; //Presnt
@@ -62,7 +63,7 @@ namespace DollarBar2BarFormation
 			this.LibIndicator = new Indiactaor();
 
 			//*** For now we have changed this to a default value of 5 Billion. If you Open BTCUSD with Bitfinex Data or XBTUSD - the data we send u in the email, you can see that bar is being sampled every time volume crosses 5,000,000,000
-			this.barSizeFix = 50000;//5000000000;  //TODO : Load Default bar size while Loading Format Instruments..
+			//this.barSizeFix = 50000;//5000000000;  //TODO : Load Default bar size while Loading Format Instruments..
 			//this.barSizeFix = m_panel.;
 
 			if(m_panel != null)
