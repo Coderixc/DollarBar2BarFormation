@@ -881,8 +881,7 @@ namespace DollarBar2BarFormation
     public enum EFields
 	{
 		QuantityField = 0,
-		ThresholdDays = 30,
-		BarSizeFix = 50000
+		
 
 	}
 
