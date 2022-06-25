@@ -62,23 +62,23 @@ namespace DollarBar2BarFormation
 			this.QueueVolume_sum = new Queue<double>();
 			this.LibIndicator = new Indiactaor();
 
-			//*** For now we have changed this to a default value of 5 Billion. If you Open BTCUSD with Bitfinex Data or XBTUSD - the data we send u in the email, you can see that bar is being sampled every time volume crosses 5,000,000,000
-			//this.barSizeFix = 50000;//5000000000;  //TODO : Load Default bar size while Loading Format Instruments..
-			//this.barSizeFix = m_panel.;
+            //*** For now we have changed this to a default value of 5 Billion. If you Open BTCUSD with Bitfinex Data or XBTUSD - the data we send u in the email, you can see that bar is being sampled every time volume crosses 5,000,000,000
+            //this.barSizeFix = 50000;//5000000000;  //TODO : Load Default bar size while Loading Format Instruments..
+            //this.barSizeFix = m_panel.;
 
-			//if(m_panel != null)
-   //         {
-			//	this.barSizeFix = m_panel.barsizefix;
-			//	this.mthresholddays = m_panel.thresholdDay;
-			//}
-			//else
-   //         {
-			//	this.barSizeFix = DefaultSettings._barsizefix;
-			//	this.mthresholddays = DefaultSettings._threshold_Day;
-			//}
+            //if (m_panel != null)
+            //{
+            //    this.barSizeFix = m_panel.barsizefix;
+            //    this.mthresholddays = m_panel.thresholdDay;
+            //}
+            //else
+            //{
+            //    this.barSizeFix = DefaultSettings._barsizefix;
+            //    this.mthresholddays = DefaultSettings._threshold_Day;
+            //}
 
 
-		}
+        }
 		#endregion
 
 		#region ICustomResolutionPlugin
