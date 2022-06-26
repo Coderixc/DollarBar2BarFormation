@@ -135,8 +135,17 @@ namespace DollarBar2BarFormation
 				_quantity = (int)obj;
 			}
 
-			Trace.TraceInformation(string.Format("Init {0}: Quantity={1}",
-				ToString(), _quantity));
+			object obj2 = null;
+			customParams.GetValue((int)EFields.ThresholdDay, out obj2);
+
+			if(obj2 !=null)
+            {
+				mthresholddays = (int)obj2;
+
+            }
+
+			Trace.TraceInformation(string.Format("Init {0}: Quantity={1}  , ThresholdDay ={ 2}",
+				ToString(), _quantity,mthresholddays));
 		}
 
 		public void OnData(ICustomBar Bar, Int64 time_in_ticks, Int32 tickId, double open, double high, double low, double close, long volumeAdded, long upVolumeAdded, long downVolumeAdded, ECustomBarTrendType trend, bool isBarClose)
