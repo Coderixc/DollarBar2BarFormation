@@ -527,7 +527,7 @@ namespace DollarBar2BarFormation
 
 
 			//Threshold Days extract Values
-			ThresholdDays.KeyPress += QuantityEdit_KeyPress;
+			ThresholdDays.KeyPress += ThresholdEdit_KeyPress;
 			ThresholdDays.CausesValidation = true;
 			ThresholdDays.Validating += new CancelEventHandler(QuantityEdit_Validating);
 
@@ -598,6 +598,16 @@ namespace DollarBar2BarFormation
 			
 		}
 
+
+		private void ThresholdEdit_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+			{
+				e.Handled = true;
+			}
+
+		}
+
 		private void QuantityEdit_Validating(object sender, CancelEventArgs e)
 		{
             bool isValid = IsValidQuantity(EditQuantity.Text);
@@ -610,7 +620,20 @@ namespace DollarBar2BarFormation
 			e.Cancel = !isValid;
 		}
 
-        private bool IsValidQuantity(string textQuantity)
+		private void Threshold_Validating(object sender, CancelEventArgs e)
+		{
+			bool isValid = IsValidQuantity(ThresholdDays.Text);
+
+			if (!isValid)
+				m_mcErrorProvider.SetError(ThresholdDays, "Please choose a value between 1 and  100");
+			else
+				m_mcErrorProvider.SetError(ThresholdDays, "");
+
+			e.Cancel = !isValid;
+		}
+
+
+		private bool IsValidQuantity(string textQuantity)
         {
             int quantity = 0;
             return IsValidQuantity(textQuantity, out quantity);
