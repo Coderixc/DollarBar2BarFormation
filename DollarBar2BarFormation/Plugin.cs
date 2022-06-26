@@ -575,7 +575,7 @@ namespace DollarBar2BarFormation
 		private void QuantityEdit_TextChanged(object sender, EventArgs e)
 		{
             int quantity = 0;
-            if (IsValidQuantity(EditQuantity.Text, out quantity))
+           if (IsValidQuantity(EditQuantity.Text, out quantity))
 			{
 				if (m_params != null)
 					m_params.SetValue((int)EFields.QuantityField, quantity);
