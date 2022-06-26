@@ -514,7 +514,7 @@ namespace DollarBar2BarFormation
 		private IParams m_params = null;
 		mcErrorProvider m_mcErrorProvider;
 
-		public int thresholdDay;
+		public int thresholdDay = 30;;
 		public int barsizefix;
 
 		public PluginSettingsPanel(IParams _params)
@@ -643,7 +643,7 @@ namespace DollarBar2BarFormation
             {
 				if(ThresholdDays.Text == "" )
                 {
-					ThresholdDays.Text = "30";
+					ThresholdDays.Text = thresholdDay.ToString();
 
 				}
 				int thresholdays = Convert.ToInt32(ThresholdDays.Text.ToString());
@@ -656,6 +656,8 @@ namespace DollarBar2BarFormation
                 {
 					TextBox tb = (TextBox)sender;
 					ThresholdDays.Text = tb.Text.ToString();
+
+					thresholdDay = Convert.ToInt32(ThresholdDays.ToString());  //update
 				}
 
 			}
