@@ -234,13 +234,18 @@ namespace DollarBar2BarFormation
         {
             formattedParams = Name;
 
-			this.barSizeFix = m_panel.barsizefix;
+			//this.barSizeFix = m_panel.barsizefix;
 
 			object quantity = null;
 			customParams.GetValue((int)EFields.QuantityField, out quantity);
 
+	
 			object thresholday = null;
-			customParams.GetValue((int)EFields.ThresholdDay, out thresholday);
+			object thresholday1 = null;
+			customParams.GetValue(1, out thresholday);
+			customParams.GetValue(2, out thresholday1);
+			//customParams.GetValue(3, out thresholday);
+			//customParams.GetValue(4, out thresholday);
 
 			string quantityText = quantity != null ? quantity.ToString() : DefaultSettings.Quantity.ToString();
 			formattedParams = string.Format("{0} {1}", Name, quantityText);
@@ -273,8 +278,8 @@ namespace DollarBar2BarFormation
 				{
 					m_panel = new PluginSettingsPanel(_params);
 
-					this.barSizeFix = m_panel.barsizefix;
-					this.mthresholddays = m_panel.thresholdDay;
+					//this.barSizeFix = m_panel.barsizefix;
+					//this.mthresholddays = m_panel.thresholdDay;
 
 				}
 				hPanelWnd = m_panel.Handle;
@@ -527,12 +532,15 @@ namespace DollarBar2BarFormation
 			{
 				object val = null;
 				_params.GetValue((int)EFields.QuantityField, out val);
+				_params.SetValue(1, ThresholdDays.Text);
+				_params.SetValue(2, BarsizeFix.Text);
+
 				if (val != null)
 				{
 					EditQuantity.Text = val.ToString();
 
-					thresholdDay = Convert.ToInt32(ThresholdDays.Text.ToString());
-					barsizefix = Convert.ToInt32(BarsizeFix.Text.ToString());
+					//thresholdDay = Convert.ToInt32(ThresholdDays.Text.ToString());
+					//barsizefix = Convert.ToInt32(BarsizeFix.Text.ToString());
 
 				}
 				else
@@ -633,6 +641,11 @@ namespace DollarBar2BarFormation
         {
 			try
             {
+				if(ThresholdDays.Text == "" )
+                {
+					ThresholdDays.Text = "30";
+
+				}
 				int thresholdays = Convert.ToInt32(ThresholdDays.Text.ToString());
 				if(thresholdays < 0 )
                 {
@@ -744,7 +757,7 @@ namespace DollarBar2BarFormation
 			this.ThresholdDays.Name = "EditThresholdDays";
 			this.ThresholdDays.Size = new System.Drawing.Size(60, 21);
 			this.ThresholdDays.TabIndex = 2;
-			this.ThresholdDays.Text = DefaultSettings._threshold_Day.ToString(); //Default
+			//this.ThresholdDays.Text = DefaultSettings._threshold_Day.ToString(); //Default
 			this.ThresholdDays.TextChanged += new System.EventHandler(this.Validate_ThresholdDays);
 
 
@@ -756,7 +769,7 @@ namespace DollarBar2BarFormation
 			this.LabelBarsizeFix.Location = new System.Drawing.Point(16, 70);
 			this.LabelBarsizeFix.Name = "LabelBarSizeFix";
 			this.LabelBarsizeFix.Size = new System.Drawing.Size(51, 13);
-			this.LabelBarsizeFix.TabIndex = 8;
+			this.LabelBarsizeFix.TabIndex = 9;
 			this.LabelBarsizeFix.Text = "BarSizeFix:";
 			this.LabelBarsizeFix.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
@@ -769,7 +782,7 @@ namespace DollarBar2BarFormation
 			this.BarsizeFix.AutoSize = false;
 			this.BarsizeFix.Name = "EditBarSizeFix";
 			this.BarsizeFix.Size = new System.Drawing.Size(60, 21);
-			this.BarsizeFix.TabIndex = 2;
+			this.BarsizeFix.TabIndex = 3;
 			this.BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
 			this.BarsizeFix.TextChanged += new EventHandler(this.Validate_BarSizeFix);
 
@@ -901,7 +914,8 @@ namespace DollarBar2BarFormation
     public enum EFields
 	{
 		QuantityField = 0,
-		ThresholdDay =30
+		ThresholdDay =2,
+		Barsizefix = 3
 		
 
 	}
