@@ -539,8 +539,6 @@ namespace DollarBar2BarFormation
 			{
 				object val = null;
 				_params.GetValue((int)EFields.QuantityField, out val);
-				_params.SetValue(1, ThresholdDays.Text);
-				_params.SetValue(2, BarsizeFix.Text);
 
 				if (val != null)
 				{
@@ -586,6 +584,16 @@ namespace DollarBar2BarFormation
 			{
 				if (m_params != null)
 					m_params.SetValue((int)EFields.QuantityField, quantity);
+			}
+		}
+
+		private void ThresholdEdit_TextChanged(object sender, EventArgs e)
+		{
+			int thday = 0;
+			if (IsValidQuantity(ThresholdDays.Text, out thday))
+			{
+				if (m_params != null)
+					m_params.SetValue((int)EFields.ThresholdDay, thday);
 			}
 		}
 
@@ -956,8 +964,8 @@ namespace DollarBar2BarFormation
     public enum EFields
 	{
 		QuantityField = 0,
-		ThresholdDay =2,
-		Barsizefix = 3
+		ThresholdDay =1,
+		Barsizefix = 2
 		
 
 	}
