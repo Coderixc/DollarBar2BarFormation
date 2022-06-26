@@ -624,6 +624,13 @@ namespace DollarBar2BarFormation
         {
 			try
             {
+
+				if (BarsizeFix.Text == "")
+				{
+					BarsizeFix.Text = barsizefix.ToString();
+					return;
+
+				}
 				//double barsize = Convert.ToDouble(BarsizeFix.Text.ToString());
 				TextBox tb = (TextBox)sender;
 				BarsizeFix.Text  = tb.Text.ToString();  //Update 
@@ -644,6 +651,7 @@ namespace DollarBar2BarFormation
 				if(ThresholdDays.Text == "" )
                 {
 					ThresholdDays.Text = thresholdDay.ToString();
+					return;
 
 				}
 				int thresholdays = Convert.ToInt32(ThresholdDays.Text.ToString());
