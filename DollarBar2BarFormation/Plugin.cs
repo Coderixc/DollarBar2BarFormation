@@ -547,7 +547,17 @@ namespace DollarBar2BarFormation
 				if (val != null)
 				{
 					EditQuantity.Text = val.ToString();
-					ThresholdDays.Text = val2.ToString();
+					if(val2 != null)
+                    {
+						ThresholdDays.Text = val2.ToString();
+					}
+					else
+                    {
+						ThresholdDays.Text = DefaultSettings._threshold_Day.ToString();
+
+					}
+
+					
 
 					//thresholdDay = Convert.ToInt32(ThresholdDays.Text.ToString());
 					//barsizefix = Convert.ToInt32(BarsizeFix.Text.ToString());
