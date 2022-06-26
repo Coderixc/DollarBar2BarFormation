@@ -525,6 +525,13 @@ namespace DollarBar2BarFormation
 			EditQuantity.CausesValidation = true;
 			EditQuantity.Validating += new CancelEventHandler(QuantityEdit_Validating);
 
+
+			//Threshold Days extract Values
+			ThresholdDays.KeyPress += QuantityEdit_KeyPress;
+			ThresholdDays.CausesValidation = true;
+			ThresholdDays.Validating += new CancelEventHandler(QuantityEdit_Validating);
+
+
 			m_mcErrorProvider = new mcErrorProvider();
 
 
