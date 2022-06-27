@@ -287,6 +287,7 @@ namespace DollarBar2BarFormation
 				{
 					m_panel = new PluginSettingsPanel(_params);
 
+
 					//this.barSizeFix = m_panel.barsizefix;
 					//this.mthresholddays = m_panel.thresholdDay;
 
