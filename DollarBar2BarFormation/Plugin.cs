@@ -542,6 +542,12 @@ namespace DollarBar2BarFormation
 			ThresholdDays.Validating += new CancelEventHandler(QuantityEdit_Validating);
 
 
+			//BarSizeFix
+			BarsizeFix.KeyPress += BarSizeFixEdit_KeyPress;
+			BarsizeFix.CausesValidation = true;
+			BarsizeFix.Validating += new CancelEventHandler(BarSizeFixEdit_Validating);
+
+
 			m_mcErrorProvider = new mcErrorProvider();
 
 
@@ -641,6 +647,16 @@ namespace DollarBar2BarFormation
 
 		}
 
+
+		private void BarSizeFixEdit_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+			{
+				e.Handled = true;
+			}
+
+		}
+
 		private void QuantityEdit_Validating(object sender, CancelEventArgs e)
 		{
             bool isValid = IsValidQuantity(EditQuantity.Text);
@@ -652,6 +668,20 @@ namespace DollarBar2BarFormation
 
 			e.Cancel = !isValid;
 		}
+
+
+		private void BarSizeFixEdit_Validating(object sender, CancelEventArgs e)
+		{
+			bool isValid = IsValidQuantity(BarsizeFix.Text);
+
+			if (!isValid)
+				m_mcErrorProvider.SetError(BarsizeFix, "Please choose a value between 1 and 5000000000 ");
+			else
+				m_mcErrorProvider.SetError(BarsizeFix, "");
+
+			e.Cancel = !isValid;
+		}
+
 
 		private void Threshold_Validating(object sender, CancelEventArgs e)
 		{
