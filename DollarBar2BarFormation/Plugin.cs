@@ -144,6 +144,13 @@ namespace DollarBar2BarFormation
 
             }
 
+			object obj3 = null;
+			customParams.GetValue((int) EFields.Barsizefix, out obj3);
+			if(obj3 !=null)
+            {
+				this.barSizeFix = (int)obj3;	
+            }
+
 			Trace.TraceInformation(string.Format("Init {0}: Quantity={1}  , ",
 				ToString(), _quantity)); //TODO:
 		}
