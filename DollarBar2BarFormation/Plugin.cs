@@ -560,6 +560,9 @@ namespace DollarBar2BarFormation
 				object val2 = null;
 				_params.GetValue((int)EFields.ThresholdDay, out val2);
 
+				object val3 = null;
+				_params.GetValue((int)EFields.Barsizefix,out val3);
+
 				if (val != null)
 				{
 					EditQuantity.Text = val.ToString();
@@ -572,8 +575,19 @@ namespace DollarBar2BarFormation
 						ThresholdDays.Text = DefaultSettings._threshold_Day.ToString();
 
 					}
+					//TODO:
 
-					
+					if (val3 != null)
+					{
+						BarsizeFix.Text = val2.ToString();
+					}
+					else
+					{
+						BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
+
+					}
+
+
 
 					//thresholdDay = Convert.ToInt32(ThresholdDays.Text.ToString());
 					//barsizefix = Convert.ToInt32(BarsizeFix.Text.ToString());
@@ -888,7 +902,7 @@ namespace DollarBar2BarFormation
 			this.BarsizeFix.Name = "EditBarSizeFix";
 			this.BarsizeFix.Size = new System.Drawing.Size(60, 21);
 			this.BarsizeFix.TabIndex = 3;
-			this.BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
+			//this.BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
 			this.BarsizeFix.TextChanged += new EventHandler(this.Validate_BarSizeFix);
 
 
