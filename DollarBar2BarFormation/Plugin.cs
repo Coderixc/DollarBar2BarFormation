@@ -579,7 +579,7 @@ namespace DollarBar2BarFormation
 
 					if (val3 != null)
 					{
-						BarsizeFix.Text = val2.ToString();
+						BarsizeFix.Text = val3.ToString();
 					}
 					else
 					{
@@ -639,6 +639,17 @@ namespace DollarBar2BarFormation
 			{
 				if (m_params != null)
 					m_params.SetValue((int)EFields.ThresholdDay, thday);
+			}
+		}
+
+
+		private void BarSizeFixEdit_TextChanged(object sender, EventArgs e)
+		{
+			int barsizefix = 0;
+			if (IsValidQuantity(BarsizeFix.Text, out barsizefix))
+			{
+				if (m_params != null)
+					m_params.SetValue((int)EFields.Barsizefix, barsizefix);
 			}
 		}
 
@@ -903,7 +914,7 @@ namespace DollarBar2BarFormation
 			this.BarsizeFix.Size = new System.Drawing.Size(60, 21);
 			this.BarsizeFix.TabIndex = 3;
 			//this.BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
-			this.BarsizeFix.TextChanged += new EventHandler(this.Validate_BarSizeFix);
+			this.BarsizeFix.TextChanged += new EventHandler(this.BarSizeFixEdit_TextChanged);
 
 
 
