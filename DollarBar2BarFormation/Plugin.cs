@@ -1062,7 +1062,7 @@ namespace DollarBar2BarFormation
 	{
 		static public int Quantity { get { return 1; } }
 
-		static public int  _barsizefix { get { return 50000; } }  //acessor properties
+		static public int  _barsizefix { get { return 5000000; } }  //acessor properties
 		static public int _threshold_Day { get { return 30; } }  //acessor properties
 	}
 
