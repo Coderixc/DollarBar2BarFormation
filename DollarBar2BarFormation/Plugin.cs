@@ -209,7 +209,7 @@ namespace DollarBar2BarFormation
 				this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, Convert.ToInt32(this.mthresholddays)) / 50;
 				this._barSize = _barSizeVar;
 			}
-			else
+			else //TODO: Need to be Checked/..
 			{
 				this._barSize = this.barSizeFix; //By Default : TODO Link with variable similar to Tick Blaze
 			}
@@ -223,7 +223,9 @@ namespace DollarBar2BarFormation
 
             if (isBarClose)
 			{
-				if (m_Volume >= this._barSize)
+
+				if(m_OHLC.BarVolume >= this._barSize)
+				//if (m_Volume >= this._barSize)
 				{
 					m_Volume = 0;
 					m_UpVolume = 0;
