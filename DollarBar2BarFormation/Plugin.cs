@@ -205,7 +205,8 @@ namespace DollarBar2BarFormation
 				// Remove first elements
 				this.QueuePrice_mean.Dequeue();
 				this.QueueVolume_sum.Dequeue();
-				this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, 30) / 50;
+				//this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, 30) / 50;
+				this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, Convert.ToInt32(this.mthresholddays)) / 50;
 				this._barSize = _barSizeVar;
 			}
 			else
