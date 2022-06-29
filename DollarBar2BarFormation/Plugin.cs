@@ -729,7 +729,11 @@ namespace DollarBar2BarFormation
             return isValid;
         }
 
-
+		private bool IsValidThreshold(string textQuantity)
+		{
+			int quantity = 0;
+			return IsValidThreshold(textQuantity, out quantity);
+		}
 		private bool IsValidThreshold(string textThreshold, out int value)
 		{
 			int thday = 0;
