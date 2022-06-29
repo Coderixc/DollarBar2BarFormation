@@ -551,8 +551,8 @@ namespace DollarBar2BarFormation
 			if (_params != null)
 			{
 				object val = null;
-				_params.GetValue((int)EFields.QuantityField, out val);
-				EditQuantity.Text = val.ToString();
+				//_params.GetValue((int)EFields.QuantityField, out val);
+				EditQuantity.Text = DefaultSettings.Quantity.ToString(); //val.ToString();
 
 
 				object val2 = null;
