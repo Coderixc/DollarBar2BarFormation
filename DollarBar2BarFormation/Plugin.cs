@@ -557,46 +557,31 @@ namespace DollarBar2BarFormation
 
 			if (_params != null)
 			{
-				object val = null;
-				_params.GetValue((int)EFields.QuantityField, out val);
-
-
 				object val2 = null;
 				_params.GetValue((int)EFields.ThresholdDay, out val2);
 
 				object val3 = null;
 				_params.GetValue((int)EFields.Barsizefix,out val3);
 
-				if (val != null)
+				if (val2 != null)
 				{
-					EditQuantity.Text = val.ToString();
-					if(val2 != null)
-                    {
-						ThresholdDays.Text = val2.ToString();
-					}
-					else
-                    {
-						ThresholdDays.Text = DefaultSettings._threshold_Day.ToString();
-
-					}
-					//TODO:
-
-					if (val3 != null)
-					{
-						BarsizeFix.Text = val3.ToString();
-					}
-					else
-					{
-						BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
-
-					}
+					ThresholdDays.Text = val2.ToString();
 				}
 				else
 				{
-                    EditQuantity.Text = DefaultSettings.Quantity.ToString();
-					thresholdDay = DefaultSettings._threshold_Day;
+					ThresholdDays.Text = DefaultSettings._threshold_Day.ToString();
+
 				}
 
+				if (val3 != null)
+				{
+					BarsizeFix.Text = val3.ToString();
+				}
+				else
+				{
+					BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
+
+				}
 				m_params = _params;
 			}
 
