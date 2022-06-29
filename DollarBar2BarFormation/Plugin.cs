@@ -692,7 +692,7 @@ namespace DollarBar2BarFormation
 
 		private void BarSizeFixEdit_Validating(object sender, CancelEventArgs e)
 		{
-			bool isValid = IsValidQuantity(BarsizeFix.Text);
+			bool isValid = IsValidBarSize(BarsizeFix.Text);
 
 			if (!isValid)
 				m_mcErrorProvider.SetError(BarsizeFix, "Please choose a value between 1 and 5000000000 ");
@@ -728,6 +728,22 @@ namespace DollarBar2BarFormation
             value = isValid ? quantity : DefaultSettings.Quantity;
             return isValid;
         }
+
+
+		private bool IsValidBarSize(string textQuantity)
+		{
+			int barsize = 0;
+			return IsValidBarSizeFix(textQuantity, out barsize);
+		}
+
+		private bool IsValidBarSizeFix(string textQuantity, out int value)
+		{
+			int barsize = 0;
+			bool isValid = !string.IsNullOrEmpty(textQuantity) && int.TryParse(textQuantity, out barsize) && barsize > 0;
+			value = isValid ? barsize : DefaultSettings._barsizefix;
+			return isValid;
+		}
+
 
 		private bool IsValidThreshold(string textQuantity)
 		{
