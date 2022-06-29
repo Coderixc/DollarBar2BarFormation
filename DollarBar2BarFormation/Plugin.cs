@@ -76,8 +76,6 @@ namespace DollarBar2BarFormation
             //    this.barSizeFix = DefaultSettings._barsizefix;
             //    this.mthresholddays = DefaultSettings._threshold_Day;
             //}
-
-
         }
 		#endregion
 
@@ -257,7 +255,7 @@ namespace DollarBar2BarFormation
 			//this.barSizeFix = m_panel.barsizefix;
 
 			object quantity = null;
-			customParams.GetValue((int)EFields.QuantityField, out quantity);
+			customParams.GetValue((int)EFields.Barsizefix, out quantity);
 
 			//object thresholday = null;
 			//object thresholday1 = null;
@@ -314,9 +312,7 @@ namespace DollarBar2BarFormation
 			return m_panel.ValidateChildren();
 		}
 
-
 		#endregion
-
 
 		#region Date EPOCH Time TO String
 		private string DateTimeString(long epochtime)
@@ -333,9 +329,6 @@ namespace DollarBar2BarFormation
 
 				return result;
 			}
-
-
-
 		}
 		#endregion
 
@@ -577,8 +570,6 @@ namespace DollarBar2BarFormation
 					ThresholdDays.Text = DefaultSettings._threshold_Day.ToString();
 
 				}
-
-
 				if (val3 != null)
 				{
 					BarsizeFix.Text = val3.ToString();
@@ -727,10 +718,10 @@ namespace DollarBar2BarFormation
 			return IsValidBarSizeFix(textQuantity, out barsize);
 		}
 
-		private bool IsValidBarSizeFix(string textQuantity, out int value)
+		private bool IsValidBarSizeFix(string textBarsize, out int value)
 		{
 			int barsize = 0;
-			bool isValid = !string.IsNullOrEmpty(textQuantity) && int.TryParse(textQuantity, out barsize) && barsize > 0;
+			bool isValid = !string.IsNullOrEmpty(textBarsize) && int.TryParse(textBarsize, out barsize) && barsize > 0;
 			value = isValid ? barsize : DefaultSettings._barsizefix;
 			return isValid;
 		}
@@ -1065,7 +1056,6 @@ namespace DollarBar2BarFormation
 	static class DefaultSettings
 	{
 		static public int Quantity { get { return 1; } }
-
 		static public int  _barsizefix { get { return 5000000; } }  //acessor properties
 		static public int _threshold_Day { get { return 30; } }  //acessor properties
 	}
