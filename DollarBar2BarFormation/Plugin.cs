@@ -615,7 +615,7 @@ namespace DollarBar2BarFormation
 		private void ThresholdEdit_TextChanged(object sender, EventArgs e)
 		{
 			int thday = 0;
-			if (IsValidQuantity(ThresholdDays.Text, out thday))
+			if (IsValidThreshold(ThresholdDays.Text, out thday))
 			{
 				if (m_params != null)
 					m_params.SetValue((int)EFields.ThresholdDay, thday);
@@ -626,7 +626,7 @@ namespace DollarBar2BarFormation
 		private void BarSizeFixEdit_TextChanged(object sender, EventArgs e)
 		{
 			int barsizefix = 0;
-			if (IsValidQuantity(BarsizeFix.Text, out barsizefix))
+			if (IsValidBarSizeFix(BarsizeFix.Text, out barsizefix))
 			{
 				if (m_params != null)
 					m_params.SetValue((int)EFields.Barsizefix, barsizefix);
