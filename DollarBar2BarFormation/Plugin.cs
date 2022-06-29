@@ -255,7 +255,7 @@ namespace DollarBar2BarFormation
 			//this.barSizeFix = m_panel.barsizefix;
 
 			object quantity = null;
-			customParams.GetValue((int)EFields.Barsizefix, out quantity);
+			//customParams.GetValue((int)EFields.Barsizefix, out quantity);
 
 			//object thresholday = null;
 			//object thresholday1 = null;
