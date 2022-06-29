@@ -264,8 +264,7 @@ namespace DollarBar2BarFormation
 			object thresholday1 = null;
 			customParams.GetValue(1, out thresholday);
 			customParams.GetValue(2, out thresholday1);
-			//customParams.GetValue(3, out thresholday);
-			//customParams.GetValue(4, out thresholday);
+
 
 			string quantityText = quantity != null ? quantity.ToString() : DefaultSettings.Quantity.ToString();
 			formattedParams = string.Format("{0} {1}", Name, quantityText);
@@ -297,10 +296,6 @@ namespace DollarBar2BarFormation
 				if (m_panel == null)
 				{
 					m_panel = new PluginSettingsPanel(_params);
-
-
-					//this.barSizeFix = m_panel.barsizefix;
-					//this.mthresholddays = m_panel.thresholdDay;
 
 				}
 				hPanelWnd = m_panel.Handle;
@@ -542,9 +537,9 @@ namespace DollarBar2BarFormation
 		{
 			InitializeComponent();
 
-			EditQuantity.KeyPress += QuantityEdit_KeyPress;
-			EditQuantity.CausesValidation = true;
-			EditQuantity.Validating += new CancelEventHandler(QuantityEdit_Validating);
+			//EditQuantity.KeyPress += QuantityEdit_KeyPress;
+			//EditQuantity.CausesValidation = true;
+			//EditQuantity.Validating += new CancelEventHandler(QuantityEdit_Validating);
 
 
 			//Threshold Days extract Values
@@ -597,20 +592,11 @@ namespace DollarBar2BarFormation
 						BarsizeFix.Text = DefaultSettings._barsizefix.ToString();
 
 					}
-
-
-
-					//thresholdDay = Convert.ToInt32(ThresholdDays.Text.ToString());
-					//barsizefix = Convert.ToInt32(BarsizeFix.Text.ToString());
-
 				}
 				else
 				{
                     EditQuantity.Text = DefaultSettings.Quantity.ToString();
-
 					thresholdDay = DefaultSettings._threshold_Day;
-
-					//barsizefix = DefaultSettings._barsizefix;
 				}
 
 				m_params = _params;
@@ -749,62 +735,59 @@ namespace DollarBar2BarFormation
 
 
         #region Authenticate and Validate Settings
-		private void Validate_BarSizeFix(object sender, EventArgs e)
-        {
-			try
-            {
+		//private void Validate_BarSizeFix(object sender, EventArgs e)
+  //      {
+		//	try
+  //          {
 
-				if (BarsizeFix.Text == "")
-				{
-					BarsizeFix.Text = barsizefix.ToString();
-					return;
+		//		if (BarsizeFix.Text == "")
+		//		{
+		//			BarsizeFix.Text = barsizefix.ToString();
+		//			return;
 
-				}
-				//double barsize = Convert.ToDouble(BarsizeFix.Text.ToString());
-				TextBox tb = (TextBox)sender;
-				BarsizeFix.Text  = tb.Text.ToString();  //Update 
-			}
-			catch (Exception ex)
-            {
-				m_mcErrorProvider.SetError(BarsizeFix, "Please contact developer" );
-			}
-        }
+		//		}
+		//		//double barsize = Convert.ToDouble(BarsizeFix.Text.ToString());
+		//		TextBox tb = (TextBox)sender;
+		//		BarsizeFix.Text  = tb.Text.ToString();  //Update 
+		//	}
+		//	catch (Exception ex)
+  //          {
+		//		m_mcErrorProvider.SetError(BarsizeFix, "Please contact developer" );
+		//	}
+  //      }
         #endregion
 
 
         #region Authenticate and Validate Threshold Days
-		private void Validate_ThresholdDays(object sender,EventArgs e)
-        {
-			try
-            {
-				if(ThresholdDays.Text == "" )
-                {
-					ThresholdDays.Text = thresholdDay.ToString();
-					return;
+		//private void Validate_ThresholdDays(object sender,EventArgs e)
+  //      {
+		//	try
+  //          {
+		//		if(ThresholdDays.Text == "" )
+  //              {
+		//			ThresholdDays.Text = thresholdDay.ToString();
+		//			return;
 
-				}
-				int thresholdays = Convert.ToInt32(ThresholdDays.Text.ToString());
-				if(thresholdays < 0 )
-                {
-					m_mcErrorProvider.SetError(ThresholdDays, "Please use valid Thresholddate ");
+		//		}
+		//		int thresholdays = Convert.ToInt32(ThresholdDays.Text.ToString());
+		//		if(thresholdays < 0 )
+  //              {
+		//			m_mcErrorProvider.SetError(ThresholdDays, "Please use valid Thresholddate ");
 
-				}
-				else
-                {
-					TextBox tb = (TextBox)sender;
-					ThresholdDays.Text = tb.Text.ToString();
+		//		}
+		//		else
+  //              {
+		//			TextBox tb = (TextBox)sender;
+		//			ThresholdDays.Text = tb.Text.ToString();
+		//			thresholdDay = Convert.ToInt32(ThresholdDays.ToString());  //update
+		//		}
 
-					thresholdDay = Convert.ToInt32(ThresholdDays.ToString());  //update
-
-					//ThresholdDays.Text = tb.Text.ToString();	
-				}
-
-			}
-			catch
-            {
-				m_mcErrorProvider.SetError(ThresholdDays, "Please contact Developer");
-			}
-        }
+		//	}
+		//	catch
+  //          {
+		//		m_mcErrorProvider.SetError(ThresholdDays, "Please contact Developer");
+		//	}
+  //      }
 
 		#endregion
 
