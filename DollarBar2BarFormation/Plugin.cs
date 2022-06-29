@@ -120,8 +120,8 @@ namespace DollarBar2BarFormation
 		private long m_Volume = 0;
 		private long m_UpVolume = 0;
 		private long m_DownVolume = 0;
-		private double m_PointValue = 0.0001;
-		private long m_MinMovement = 1;
+		//private double m_PointValue = 0.0001;
+		//private long m_MinMovement = 1;
 
 		#endregion
 
@@ -129,12 +129,12 @@ namespace DollarBar2BarFormation
 		public void Init(IBaseOptions baseOptions, IParams customParams)
 		{
 
-			object obj = null;
-			customParams.GetValue((int)EFields.QuantityField, out obj);
-			if (obj != null)
-			{
-				_quantity = (int)obj;
-			}
+			//object obj = null;
+			//customParams.GetValue((int)EFields.QuantityField, out obj);
+			//if (obj != null)
+			//{
+			//	_quantity = (int)obj;
+			//}
 
 			object obj2 = null;
 			customParams.GetValue((int)EFields.ThresholdDay, out obj2);
@@ -214,9 +214,9 @@ namespace DollarBar2BarFormation
 				this._barSize = this.barSizeFix; //By Default : TODO Link with variable similar to Tick Blaze
 			}
 
-			m_Volume += volumeAdded;
-			m_UpVolume += upVolumeAdded;
-			m_DownVolume += downVolumeAdded;
+			//m_Volume += volumeAdded;
+			//m_UpVolume += upVolumeAdded;
+			//m_DownVolume += downVolumeAdded;
 
 			m_OHLC.Update(open, high, low, close, volumeAdded, upVolumeAdded, downVolumeAdded, time_in_ticks, tickId);
             Bar.UpdateBar(m_OHLC.Time_in_ticks, m_OHLC.TickId, m_OHLC.Open, m_OHLC.High, m_OHLC.Low, m_OHLC.Close, m_OHLC.BarVolume, m_OHLC.BarUpVolume, m_OHLC.BarDownVolume, m_OHLC.Trend, true, true);
@@ -227,11 +227,11 @@ namespace DollarBar2BarFormation
 				if(m_OHLC.BarVolume >= this._barSize)
 				//if (m_Volume >= this._barSize)
 				{
-					m_Volume = 0;
-					m_UpVolume = 0;
-					m_DownVolume = 0;
+					//m_Volume = 0;
+					//m_UpVolume = 0;
+					//m_DownVolume = 0;
 					Bar.CloseBar();
-					//_current_Index_Bar = 0;
+					_current_Index_Bar = 0;
 					m_OHLC.Clear();
 				}
 
@@ -259,12 +259,10 @@ namespace DollarBar2BarFormation
 			object quantity = null;
 			customParams.GetValue((int)EFields.QuantityField, out quantity);
 
-	
-			object thresholday = null;
-			object thresholday1 = null;
-			customParams.GetValue(1, out thresholday);
-			customParams.GetValue(2, out thresholday1);
-
+			//object thresholday = null;
+			//object thresholday1 = null;
+			//customParams.GetValue(1, out thresholday);
+			//customParams.GetValue(2, out thresholday1);
 
 			string quantityText = quantity != null ? quantity.ToString() : DefaultSettings.Quantity.ToString();
 			formattedParams = string.Format("{0} {1}", Name, quantityText);
@@ -707,7 +705,7 @@ namespace DollarBar2BarFormation
 
 		private void Threshold_Validating(object sender, CancelEventArgs e)
 		{
-			bool isValid = IsValidQuantity(ThresholdDays.Text);
+			bool isValid = IsValidThreshold(ThresholdDays.Text);
 
 			if (!isValid)
 				m_mcErrorProvider.SetError(ThresholdDays, "Please choose a value between 1 and  100");
@@ -731,14 +729,23 @@ namespace DollarBar2BarFormation
             return isValid;
         }
 
-        //validate Input from text box
+
+		private bool IsValidThreshold(string textThreshold, out int value)
+		{
+			int thday = 0;
+			bool isValid = !string.IsNullOrEmpty(textThreshold) && int.TryParse(textThreshold, out thday) && thday > 0;
+			value = isValid ? thday : DefaultSettings._threshold_Day;
+			return isValid;
+		}
+
+		//validate Input from text box
 
 
-        #region Authenticate and Validate Settings
+		#region Authenticate and Validate Settings
 		//private void Validate_BarSizeFix(object sender, EventArgs e)
-  //      {
+		//      {
 		//	try
-  //          {
+		//          {
 
 		//		if (BarsizeFix.Text == "")
 		//		{
@@ -751,32 +758,32 @@ namespace DollarBar2BarFormation
 		//		BarsizeFix.Text  = tb.Text.ToString();  //Update 
 		//	}
 		//	catch (Exception ex)
-  //          {
+		//          {
 		//		m_mcErrorProvider.SetError(BarsizeFix, "Please contact developer" );
 		//	}
-  //      }
-        #endregion
+		//      }
+		#endregion
 
 
-        #region Authenticate and Validate Threshold Days
+		#region Authenticate and Validate Threshold Days
 		//private void Validate_ThresholdDays(object sender,EventArgs e)
-  //      {
+		//      {
 		//	try
-  //          {
+		//          {
 		//		if(ThresholdDays.Text == "" )
-  //              {
+		//              {
 		//			ThresholdDays.Text = thresholdDay.ToString();
 		//			return;
 
 		//		}
 		//		int thresholdays = Convert.ToInt32(ThresholdDays.Text.ToString());
 		//		if(thresholdays < 0 )
-  //              {
+		//              {
 		//			m_mcErrorProvider.SetError(ThresholdDays, "Please use valid Thresholddate ");
 
 		//		}
 		//		else
-  //              {
+		//              {
 		//			TextBox tb = (TextBox)sender;
 		//			ThresholdDays.Text = tb.Text.ToString();
 		//			thresholdDay = Convert.ToInt32(ThresholdDays.ToString());  //update
@@ -784,10 +791,10 @@ namespace DollarBar2BarFormation
 
 		//	}
 		//	catch
-  //          {
+		//          {
 		//		m_mcErrorProvider.SetError(ThresholdDays, "Please contact Developer");
 		//	}
-  //      }
+		//      }
 
 		#endregion
 
