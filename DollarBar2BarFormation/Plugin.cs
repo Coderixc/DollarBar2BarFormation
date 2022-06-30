@@ -138,7 +138,7 @@ namespace DollarBar2BarFormation
 
 			if(obj2 !=null)
             {
-				mthresholddays = (int)obj2;
+			mthresholddays = (int)obj2;
 
             }
 
@@ -146,7 +146,7 @@ namespace DollarBar2BarFormation
 			customParams.GetValue((int) EFields.Barsizefix, out obj3);
 			if(obj3 !=null)
             {
-				this.barSizeFix = (int)obj3;	
+				this.barSizeFix = Convert.ToInt32((int)obj3);	
             }
 
 			Trace.TraceInformation(string.Format("Init {0}: Quantity={1}  , ",
