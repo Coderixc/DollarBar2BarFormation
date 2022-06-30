@@ -31,7 +31,6 @@ namespace DollarBar2BarFormation
 
 		private Indiactaor LibIndicator;
 
-
 		private List<double> ListPrice_minutes = new List<double>();
 		private List<double> ListVolume_minutes = new List<double>();
 
