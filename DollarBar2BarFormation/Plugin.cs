@@ -39,8 +39,8 @@ namespace DollarBar2BarFormation
 		private List<double> list_barsizevar = new List<double>();
 
 
-		private double _barSize = 0;
-		private double _barSizeVar = DefaultSettings._barsizefix;
+		private double _barSize = DefaultSettings._barsizefix;
+		private double _barSizeVar = 0;
 		private int mthresholddays = DefaultSettings._threshold_Day;
 
 		private int PreviousDate = 0; //Past
@@ -223,13 +223,13 @@ namespace DollarBar2BarFormation
 
 			if (this.barSizeFix == 0)
 			{
-				return;
+				//return;
 			}
 			if (isBarClose)
 			{
 
-				//if(m_OHLC.BarVolume >= Convert.ToInt64(this._barSize))
-				if (m_Volume >= this._barSize)
+				if(m_OHLC.BarVolume >= Convert.ToInt64(this._barSize))
+				//if (m_Volume >= this._barSize)
 				{
 					//m_Volume = 0;
 					//m_UpVolume = 0;
@@ -247,7 +247,7 @@ namespace DollarBar2BarFormation
 		public void Reset()
 		{
             _current_Index_Bar = 0;
-            m_OHLC.Clear();
+           m_OHLC.Clear();
 
 			this.QueueVolume_sum.Clear();
 			this.QueuePrice_mean.Clear();
