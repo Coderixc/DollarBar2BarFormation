@@ -41,7 +41,7 @@ namespace DollarBar2BarFormation
 
 		private double _barSize = 0;
 		private double _barSizeVar = DefaultSettings._barsizefix;
-		private double mthresholddays = DefaultSettings._threshold_Day;
+		private int mthresholddays = DefaultSettings._threshold_Day;
 
 		private int PreviousDate = 0; //Past
 		private int ProcessDate = 0; //Presnt
@@ -203,7 +203,7 @@ namespace DollarBar2BarFormation
 				this.QueuePrice_mean.Dequeue();
 				this.QueueVolume_sum.Dequeue();
 				//this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, 30) / 50;
-				this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, Convert.ToInt32(this.mthresholddays)) / 50;
+				this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, this.mthresholddays) / 50;
 				this._barSize = _barSizeVar;
 			}
 			else //TODO: Need to be Checked/..
@@ -211,25 +211,33 @@ namespace DollarBar2BarFormation
 				this._barSize = this.barSizeFix; //By Default : TODO Link with variable similar to Tick Blaze
 			}
 
-			//m_Volume += volumeAdded;
+		
+
+
+			m_Volume += volumeAdded;
 			//m_UpVolume += upVolumeAdded;
 			//m_DownVolume += downVolumeAdded;
 
 			m_OHLC.Update(open, high, low, close, volumeAdded, upVolumeAdded, downVolumeAdded, time_in_ticks, tickId);
             Bar.UpdateBar(m_OHLC.Time_in_ticks, m_OHLC.TickId, m_OHLC.Open, m_OHLC.High, m_OHLC.Low, m_OHLC.Close, m_OHLC.BarVolume, m_OHLC.BarUpVolume, m_OHLC.BarDownVolume, m_OHLC.Trend, true, true);
 
-            if (isBarClose)
+			if (this.barSizeFix == 0)
+			{
+				return;
+			}
+			if (isBarClose)
 			{
 
-				if(m_OHLC.BarVolume >= this._barSize)
-				//if (m_Volume >= this._barSize)
+				//if(m_OHLC.BarVolume >= Convert.ToInt64(this._barSize))
+				if (m_Volume >= this._barSize)
 				{
 					//m_Volume = 0;
 					//m_UpVolume = 0;
 					//m_DownVolume = 0;
 					Bar.CloseBar();
 					_current_Index_Bar = 0;
-					m_OHLC.Clear();
+					//m_OHLC.BarVolume =0.0;
+                    m_OHLC.Clear();
 				}
 
 			}
