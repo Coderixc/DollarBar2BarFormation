@@ -120,6 +120,8 @@ namespace DollarBar2BarFormation
 		//private double m_PointValue = 0.0001;
 		//private long m_MinMovement = 1;
 
+		private Int64 m_BarNo = 0;
+
 		#endregion
 
 
@@ -212,7 +214,7 @@ namespace DollarBar2BarFormation
 				this._barSize = this.barSizeFix; //By Default : TODO Link with variable similar to Tick Blaze
 			}
 
-		
+			this.m_BarNo++;
 
 
 			m_Volume += volumeAdded;
@@ -238,18 +240,26 @@ namespace DollarBar2BarFormation
 
 			if (isBarClose)
 			{
+				//if ((this._barSizeVar != 0))
+				//{
 
-				if(m_OHLC.BarVolume >= Convert.ToInt64(this._barSize))
-				//if (m_Volume >= this._barSize)
-				{
-					//m_Volume = 0;
-					//m_UpVolume = 0;
-					//m_DownVolume = 0;
-					Bar.CloseBar();
-					_current_Index_Bar = 0;
-					//m_OHLC.BarVolume =0.0;
-					m_OHLC.Clear();
-				}
+
+
+					//if(m_OHLC.BarVolume >= Convert.ToInt64(this._barSize))
+					if (m_Volume >= this._barSize)
+					//if (m_Volume >= this._barSizeVar)
+					{
+						m_Volume = 0;
+						//m_UpVolume = 0;
+						//m_DownVolume = 0;
+						Bar.CloseBar();
+						_current_Index_Bar = 0;
+						//m_OHLC.BarVolume =0.0;
+						m_OHLC.Clear();
+
+					}
+				//}
+				//_barSizeVar = 0;
 
 			}
 
