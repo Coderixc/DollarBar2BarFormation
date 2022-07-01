@@ -39,7 +39,7 @@ namespace DollarBar2BarFormation
 		private List<double> list_barsizevar = new List<double>();
 
 
-		private double _barSize = DefaultSettings._barsizefix;
+		private double _barSize = 0;
 		private double _barSizeVar = 0;
 		private int mthresholddays = DefaultSettings._threshold_Day;
 
