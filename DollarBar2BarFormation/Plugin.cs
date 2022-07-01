@@ -226,6 +226,14 @@ namespace DollarBar2BarFormation
 			{
 				//return;
 			}
+
+
+			if (m_OHLC.BarVolume >= Convert.ToInt64(this._barSizeVar))
+			{
+				string Exploring = "Bar volume  size is greater than bar size var ";
+			}
+
+
 			if (isBarClose)
 			{
 
@@ -238,7 +246,7 @@ namespace DollarBar2BarFormation
 					Bar.CloseBar();
 					_current_Index_Bar = 0;
 					//m_OHLC.BarVolume =0.0;
-                    m_OHLC.Clear();
+					m_OHLC.Clear();
 				}
 
 			}
