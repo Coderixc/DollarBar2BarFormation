@@ -227,12 +227,14 @@ namespace DollarBar2BarFormation
 				//return;
 			}
 
-
-			if (m_OHLC.BarVolume >= Convert.ToInt64(this._barSizeVar))
+			if (this._barSizeVar != 0)
 			{
-				string Exploring = "Bar volume  size is greater than bar size var ";
-			}
+				if (m_OHLC.BarVolume >= Convert.ToInt64(this._barSizeVar))
+				{
+					string Exploring = "Bar volume  size is greater than bar size var ";
+				}
 
+			}
 
 			if (isBarClose)
 			{
