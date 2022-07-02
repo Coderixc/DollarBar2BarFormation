@@ -180,6 +180,7 @@ namespace DollarBar2BarFormation
 			#region Resampling data for a Day in Multicharts
 			if (this.PreviousDate != this.ProcessDate)
 			{
+
 				//Creating List1 which holds the closing prices.mean()
 				double res = this.resample_WithMean(this.ListPrice_minutes);
 				//this.ListPrice_mean.Add(res);
@@ -202,12 +203,25 @@ namespace DollarBar2BarFormation
 			if (Threshold >= this.mthresholddays) //30)
 			{
 				this.list_barsizevar = this.LibIndicator.Multiply(this.QueuePrice_mean.ToList(), this.QueueVolume_sum.ToList());
+
+				//Arjun code
+				_barSizeVar = LibIndicator.Simple_MovingAverage(QueueVolume_sum.ToList(), mthresholddays) / 50;
+				this._barSize = _barSizeVar;
+
+
+				//end
+
 				// Remove first elements
 				this.QueuePrice_mean.Dequeue();
 				this.QueueVolume_sum.Dequeue();
 				//this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, 30) / 50;
-				this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, this.mthresholddays) / 50;
-				this._barSize = _barSizeVar;
+				//this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, this.mthresholddays) / 50;
+				//this._barSize = _barSizeVar;
+
+
+	
+				//Debug.WriteLine(firstdateonchart, date, PreviousDate, ProcessDate, Threshold, mthresholddays, _barSizeVar);
+
 			}
 			else //TODO: Need to be Checked/..
 			{
