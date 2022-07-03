@@ -207,7 +207,6 @@ namespace DollarBar2BarFormation
 
 				//Arjun code
 				_barSizeVar = LibIndicator.Simple_MovingAverage(QueueVolume_sum.ToList(), mthresholddays) / 50;
-				this._barSize = _barSizeVar;
 
 
 				//end
@@ -217,7 +216,7 @@ namespace DollarBar2BarFormation
 				this.QueueVolume_sum.Dequeue();
 				//this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, 30) / 50;
 				//this._barSizeVar = this.LibIndicator.Simple_MovingAverage(this.list_barsizevar, this.mthresholddays) / 50;
-				//this._barSize = _barSizeVar;
+				this._barSize = _barSizeVar;
 
 
 	
