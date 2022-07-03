@@ -160,6 +160,7 @@ namespace DollarBar2BarFormation
 		{
 			this.ListPrice_minutes.Add(close);
 			this.ListVolume_minutes.Add(volumeAdded);
+
 		
 			//*** Have you checked the format of time_in_ticks ?
 			//635726880600000000-- > 20150717000100
