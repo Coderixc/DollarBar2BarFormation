@@ -252,9 +252,6 @@ namespace DollarBar2BarFormation
 			{
 				//if ((this._barSizeVar != 0))
 				//{
-
-
-
 					//if(m_OHLC.BarVolume >= Convert.ToInt64(this._barSize))
 					if (m_Volume >= this._barSize)
 					//if (m_Volume >= this._barSizeVar)
