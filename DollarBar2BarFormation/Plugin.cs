@@ -238,10 +238,7 @@ namespace DollarBar2BarFormation
 			m_OHLC.Update(open, high, low, close, volumeAdded, upVolumeAdded, downVolumeAdded, time_in_ticks, tickId);
             Bar.UpdateBar(m_OHLC.Time_in_ticks, m_OHLC.TickId, m_OHLC.Open, m_OHLC.High, m_OHLC.Low, m_OHLC.Close, m_OHLC.BarVolume, m_OHLC.BarUpVolume, m_OHLC.BarDownVolume, m_OHLC.Trend, true, true);
 
-			if (this.barSizeFix == 0)
-			{
-				//return;
-			}
+			
 
 			if (this._barSizeVar != 0)
 			{
