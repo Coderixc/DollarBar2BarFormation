@@ -205,11 +205,10 @@ namespace DollarBar2BarFormation
 			{
 				this.list_barsizevar = this.LibIndicator.Multiply(this.QueuePrice_mean.ToList(), this.QueueVolume_sum.ToList());
 
-				//Arjun code
+				//****** Arjun Logic
 				_barSizeVar = LibIndicator.Simple_MovingAverage(QueueVolume_sum.ToList(), mthresholddays) / 50;
 
-
-				//end
+				//******* end
 
 				// Remove first elements
 				this.QueuePrice_mean.Dequeue();
