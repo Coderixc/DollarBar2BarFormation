@@ -203,7 +203,7 @@ namespace DollarBar2BarFormation
 			int Threshold = Math.Max(this.QueuePrice_mean.Count, this.QueueVolume_sum.Count);
 			if (Threshold >= this.mthresholddays) //30)
 			{
-				this.list_barsizevar = this.LibIndicator.Multiply(this.QueuePrice_mean.ToList(), this.QueueVolume_sum.ToList());
+				//this.list_barsizevar = this.LibIndicator.Multiply(this.QueuePrice_mean.ToList(), this.QueueVolume_sum.ToList());
 
 				//****** Arjun Logic
 				_barSizeVar = LibIndicator.Simple_MovingAverage(QueueVolume_sum.ToList(), mthresholddays) / 50;
