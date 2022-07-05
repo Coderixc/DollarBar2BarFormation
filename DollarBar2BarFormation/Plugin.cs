@@ -344,6 +344,7 @@ namespace DollarBar2BarFormation
 			if (m_panel == null)
 				return true;
 
+
 			return m_panel.ValidateChildren();
 		}
 
